@@ -21,6 +21,17 @@ body::before {
 	background-position: center;
 }
 
+.container {
+	width: 100%;
+	margin: 3.125rem auto 0 auto;
+}
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 720px;
+	}
+}
+
 form {
 	background-color: rgb(27, 27, 50, 0.8);
 	padding: 2.5rem 0.625rem;
