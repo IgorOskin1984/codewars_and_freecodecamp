@@ -18,7 +18,7 @@
 		<form id="survey-form" action="">
 			<div class="form-body">
 
-				<fieldset class="body-section">
+				<!--<fieldset class="body-section">
 					<label class="section-item" for="name" id="name-label">
 						<span>Name</span>
 						<input class="input" id="name" required type="text" placeholder="Enter your name" value="">
@@ -45,13 +45,22 @@
 							<option value="">Other</option>
 						</select>
 					</label>
-				</fieldset>
+				</fieldset>-->
 
-				<fieldset>
-					<p>Would you recommend freeCodeCamp to a friend?</p>
-					<label for=""> <input name="radio-button" type="radio" value="1"> Definitely</label>
-					<label for=""> <input name="radio-button" type="radio" value="2"> Maybe</label>
-					<label for=""> <input name="radio-button" type="radio" value="3"> Not sure</label>
+				<fieldset class="body-section">
+					<p class="recommend">Would you recommend freeCodeCamp to a friend?</p>
+					<label class='flexLabel' for="">
+						<input checked name="radio-button" type="radio" value="1">
+						<span>Definitely</span>
+					</label>
+					<label class='flexLabel' for="">
+						<input name="radio-button" type="radio" value="2">
+						<span>Maybe</span>
+					</label>
+					<label class='flexLabel' for="">
+						<input name="radio-button" type="radio" value="3">
+						<span>Not sure</span>
+					</label>
 				</fieldset>
 
 				<fieldset>
