@@ -6,6 +6,17 @@ body {
 	color: white;
 }
 
+h1 {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	font-size: 1.125rem;
+}
+
 body::before {
 	content: '';
 	position: fixed;
@@ -19,6 +30,26 @@ body::before {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+.header {
+	padding: 20px;
+	text-align: center;
+}
+
+.title:not(:last-child) {
+	padding-bottom: 10px;
+}
+
+.description {
+	font-style: italic;
+	font-weight: 200;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+	letter-spacing: 1px;
+}
+
+.description:last-child {
+	padding-bottom: 10px;
 }
 
 .container {
@@ -36,5 +67,40 @@ form {
 	background-color: rgb(27, 27, 50, 0.8);
 	padding: 2.5rem 0.625rem;
 	border-radius: 0.25rem;
+	border-radius: 5px;
+}
 
+.form-body {
+	padding: 10px 30px;
+	/*width: 100%*/
+}
+
+.body-section {
+	border: none;
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+}
+
+.section-item {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.input {
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	height: 2rem;
+	padding: 0.375rem 0.75rem;
+	color: #495057;
+	font-size: 16px;
+}
+
+select.input {
+	height: 50px;
+}
+
+.input option {
+	height: 20px;
 }
