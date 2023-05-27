@@ -125,3 +125,12 @@ form {
 	width: 20px;
 	height: 20px;
 }
+
+.improved:not(:last-child) {
+	padding-bottom: 20px;
+}
+
+.improved span {
+	font-size: 15px;
+	font-weight: 300;
+}
