@@ -1,21 +1,10 @@
-// Setup
-function phoneticLookup(val) {
-	let result = "";
-
+function checkObj(obj, checkProp) {
 	// Only change code below this line
-	const lookup = {
-		"alpha": "Adams",
-		"bravo": "Boston",
-		"charlie": "Chicago",
-		"delta": "Denver",
-		"echo": "Easy",
-		"foxtrot": "Frank"
+	if (obj.hasOwnProperty(checkProp)) {
+		return obj[checkProp]
 	}
-
-	result = lookup[val];
-
+	else {
+		return "Not Found";
+	}
 	// Only change code above this line
-	return result;
 }
-
-phoneticLookup("charlie");
