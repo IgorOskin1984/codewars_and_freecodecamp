@@ -1,15 +1,34 @@
-function testSize(num) {
+const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+
+function golfScore(par, strokes) {
 	// Only change code below this line
-	if (num < 5) {
-		return 'Tiny'
+	if (strokes >= par + 3) {
+		return "Go Home!"
 	}
-	else if (num < 10) { return 'Small' }
-	else if (num < 15) { return 'Medium' }
-	else if (num < 20) { return 'Large' }
-	else if (num >= 20) { return 'Huge' }
+	else if (strokes === par + 2) {
+		return "Double Bogey"
+	}
+	else if (strokes === par + 1) {
+		return "Bogey"
+	}
+	else if (strokes > 1 && strokes === par) {
+		return "Par";
+	}
+	else if (strokes === par - 1) {
+		return "Birdie";
+	}
+	else if (strokes > 1 && strokes <= par - 2) {
+		return "Eagle";
+	}
+	else if (strokes === 1 && par > 0) {
+		return "Hole-in-one!";
+	}
+
+
 
 	return "Change Me";
 	// Only change code above this line
 }
-
-testSize(7);
+console.log(
+	golfScore(4, 1)
+);
