@@ -1,10 +1,23 @@
-function checkObj(obj, checkProp) {
-	// Only change code below this line
-	if (obj.hasOwnProperty(checkProp)) {
-		return obj[checkProp]
+const myMusic = [
+	{
+		"artist": "Billy Joel",
+		"title": "Piano Man",
+		"release_year": 1973,
+		"formats": [
+			"CD",
+			"8T",
+			"LP"
+		],
+		"gold": true
 	}
-	else {
-		return "Not Found";
-	}
-	// Only change code above this line
-}
+];
+myMusic.push({
+	artist: "Piano Man",
+	title: "Billy Joel",
+	release_year: 1975,
+	formats: [
+		"CD",
+		"8T",
+		"LP"
+	],
+})
