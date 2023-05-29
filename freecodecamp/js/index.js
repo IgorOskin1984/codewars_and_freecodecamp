@@ -1,2 +1,2 @@
 // Only change code below this line
-const myArray = ["peanut butter", 1, 2];
+const myArray = [["Bulls", 23], ["White Sox", 45]];
