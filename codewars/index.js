@@ -1,35 +1,23 @@
-function DNAStrand(dna) {
-	dna = dna.toUpperCase().split('');
-	dna = dna.map((char) => {
-		switch (char) {
-			case 'A':
-				return char = 'T'
-			case 'T':
-				return char = 'A'
-			case 'C':
-				return char = 'G'
-			case 'G':
-				return char = 'C'
-			default:
-				return char;
+function validatePIN(pin) {
+	if (pin.length === 4 || pin.length === 6) {
+		for (let i = 0; i < pin.length; i++) {
+			if (isNaN(Number(pin[i]))) {
+				console.log('false ', pin[i]);
+				return false;
+			}
+			console.log('true ', pin[i]);
+			//return true;
 		}
-
-	})
-	return dna.join('');
+		return true;
+	}
+	else {
+		return false
+	}
 }
 
-DNAStrand('GTAT')
-
-//*codewars
-//function DNAStrand(dna) {
-//  return dna.replace(/./g, function(c) {
-//    return DNAStrand.pairs[c]
-//  })
+//!
+//function validatePIN(pin) {
+//  return /^(\d{4}|\d{6})$/.test(pin);
 //}
 
-//DNAStrand.pairs = {
-//  A: 'T',
-//  T: 'A',
-//  C: 'G',
-//  G: 'C',
-//}
+validatePIN('123 ')
