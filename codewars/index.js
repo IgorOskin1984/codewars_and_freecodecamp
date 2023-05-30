@@ -1,29 +1,35 @@
-function openOrSenior(data) {
-	if (!Array.isArray(data)) {
-		console.log('not valid input data');
-		return
-	}
-	const output = [];
-	data.forEach(arr => {
-		if (Array.isArray(arr)) {
-			arr[0] >= 55
-				? arr[1] > 7
-					? output.push("Senior")
-					: output.push("Open")
-				: output.push("Open");
+function DNAStrand(dna) {
+	dna = dna.toUpperCase().split('');
+	dna = dna.map((char) => {
+		switch (char) {
+			case 'A':
+				return char = 'T'
+			case 'T':
+				return char = 'A'
+			case 'C':
+				return char = 'G'
+			case 'G':
+				return char = 'C'
+			default:
+				return char;
 		}
-	})
-	console.log(output);
-	return output
-}
-openOrSenior('hi')
 
-//! лучшее решение
-//function openOrSenior(data){
-//  return data.map(([age, handicap]) => (age > 54 && handicap > 7) ? 'Senior' : 'Open');
+	})
+	return dna.join('');
+}
+
+DNAStrand('GTAT')
+
+//*codewars
+//function DNAStrand(dna) {
+//  return dna.replace(/./g, function(c) {
+//    return DNAStrand.pairs[c]
+//  })
 //}
 
-//input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
-//output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
-//[[45, 12],[55,21],[19, -2],[104, 20]]
-//['Open', 'Senior', 'Open', 'Senior']
+//DNAStrand.pairs = {
+//  A: 'T',
+//  T: 'A',
+//  C: 'G',
+//  G: 'C',
+//}
