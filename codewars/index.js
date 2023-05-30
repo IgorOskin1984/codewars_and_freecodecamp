@@ -1,23 +1,11 @@
-function validatePIN(pin) {
-	if (pin.length === 4 || pin.length === 6) {
-		for (let i = 0; i < pin.length; i++) {
-			if (isNaN(Number(pin[i]))) {
-				console.log('false ', pin[i]);
-				return false;
-			}
-			console.log('true ', pin[i]);
-			//return true;
-		}
-		return true;
+function getMiddle(s) {
+	let midle = Math.round(s.length / 2);
+	if (s.length % 2 == 0) {
+		return s[midle - 1] + s[midle];
 	}
 	else {
-		return false
+		return s[midle - 1];
 	}
 }
 
-//!
-//function validatePIN(pin) {
-//  return /^(\d{4}|\d{6})$/.test(pin);
-//}
-
-validatePIN('123 ')
+getMiddle('testing')
