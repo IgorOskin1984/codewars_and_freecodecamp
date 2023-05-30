@@ -1,7 +1,13 @@
-function checkSign(num) {
-	return num === 0 ? 'zero'
-		: num > 0 ? 'positive'
-			: 'negative'
+function rangeOfNumbers(startNum, endNum) {
+	debugger
+	if (startNum > endNum) {
+		return [];
+	} else {
+		const numbers = rangeOfNumbers(startNum, endNum - 1);
+		numbers.push(endNum);
+		console.log(numbers);
+		return numbers;
+	}
 }
 
-checkSign(10);
+rangeOfNumbers(6, 9)
