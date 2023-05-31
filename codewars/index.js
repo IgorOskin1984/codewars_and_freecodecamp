@@ -1,35 +1,17 @@
-function cakes(recipe, available) {
-	//обозначить массив с переменными recipe и available
-	//сравнить массивы
-	//если в available нет нужного ингредиента - вернуть ложь
-	//пройтись по объекту available и значение каждого ингридиента делить на соответствующее значение recipe
-	//сохранять результаты деления в массиве сум
-	//вернуть наименьшее значение из этого массива
-	const recipeArr = Object.keys(recipe);
-	const availableArr = Object.keys(available);
-	const res = []
-	let isValid = true;
-
-	recipeArr.forEach((ingr) => {
-		isValid = availableArr.includes(ingr);
-		if (!isValid) return isValid
-	})
-
-	if (isValid === false) {
-		console.log(isValid);
-		return isValid;
+function maxSequence(arr) {
+	let maxSum = 0;
+	let currentSum = 0;
+	for (let i = 0; i < arr.length; i++) {
+		currentSum += arr[i]
+		if (currentSum < 0) {
+			currentSum = 0
+		}
+		if (currentSum > maxSum) {
+			maxSum = currentSum
+		}
 	}
-	else {
-		availableArr.forEach(ingr => {
-			let a = Math.floor(available[ingr] / recipe[ingr]);
-			isNaN(a)
-				? false
-				: res.push(a)
-		})
-
-		console.log(Math.min(...res))
-		return Math.min(...res)
-	}
+	return maxSum
 }
 
-cakes({ flour: 500, sugar: 200, eggs: 1 }, { flour: 1200, sugar: 1200, eggs: 5, milk: 200 });
+
+console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]));  // Output: 6
