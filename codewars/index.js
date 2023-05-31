@@ -1,17 +1,18 @@
-function maxSequence(arr) {
-	let maxSum = 0;
-	let currentSum = 0;
-	for (let i = 0; i < arr.length; i++) {
-		currentSum += arr[i]
-		if (currentSum < 0) {
-			currentSum = 0
+function sortArray(arr) {
+	const oddArray = arr.filter(num => num % 2 !== 0).sort((a, b) => a - b);
+	console.log(oddArray);
+	let j = 0;
+	arr = arr.map(num => {
+		if (num % 2 !== 0) {
+			num = oddArray[j];
+			j++;
 		}
-		if (currentSum > maxSum) {
-			maxSum = currentSum
-		}
-	}
-	return maxSum
+		return num
+	})
+	console.log(arr);
+	return arr
 }
 
+sortArray([14, -49, 32, -49, -47, -32, -27, 6, -10, -10, -27, -8, 28, -4, -47])
+//[ 14, -49, 32, -47, -27, -32, 3, 6, -10, -10, 11, -8, 28, -4, 25 ]
 
-console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]));  // Output: 6
