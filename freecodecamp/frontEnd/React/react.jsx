@@ -1,8 +1,5 @@
 const JSX = (
-	<div>
-		<h1>Hello World</h1>
-		<p>Lets render this to the DOM</p>
+	<div className='myDiv' >
+		<h1>Add a class to this div</h1>
 	</div>
 );
-// Change code below this line
-ReactDOM.render(JSX, document.getElementById('challenge-node'))
