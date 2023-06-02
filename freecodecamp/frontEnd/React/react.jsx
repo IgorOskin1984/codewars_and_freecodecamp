@@ -1,30 +1,17 @@
-class App extends React.Component {
+class StatefulComponent extends React.Component {
 	constructor(props) {
 		super(props);
+		// Only change code below this line
+		this.state = {
+			firstName: 'Ihor'
 
+		}
+		// Only change code above this line
 	}
 	render() {
 		return (
 			<div>
-				{ /* Change code below this line */}
-				<Welcome name={'aaa'} />
-				{ /* Change code above this line */}
-			</div>
-		);
-	}
-};
-
-class Welcome extends React.Component {
-	constructor(props) {
-		super(props);
-
-	}
-	render() {
-		return (
-			<div>
-				{ /* Change code below this line */}
-				<p>Hello, <strong>{this.props.name}</strong>!</p>
-				{ /* Change code above this line */}
+				<h1>{this.state.firstName}</h1>
 			</div>
 		);
 	}
