@@ -2,22 +2,36 @@ class MyComponent extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			activeUsers: null
+			message: ''
 		};
+		this.handleEnter = this.handleEnter.bind(this);
+		this.handleKeyPress = this.handleKeyPress.bind(this);
 	}
+
 	componentDidMount() {
-		setTimeout(() => {
-			this.setState({
-				activeUsers: 1273
-			});
-		}, 1500);
+		document.addEventListener('keydown', this.handleKeyPress);
 	}
+
+	componentWillUnmount() {
+		document.removeEventListener('keydown', this.handleKeyPress);
+	}
+
+	handleEnter() {
+		this.setState((state) => ({
+			message: state.message + 'You pressed the enter key! '
+		}));
+	}
+
+	handleKeyPress(event) {
+		if (event.keyCode === 13) {
+			this.handleEnter();
+		}
+	}
+
 	render() {
 		return (
 			<div>
-				{/* Change code below this line */}
-				<h1>Active Users:{this.state.activeUsers} </h1>
-				{/* Change code above this line */}
+				<h1>{this.state.message}</h1>
 			</div>
 		);
 	}
