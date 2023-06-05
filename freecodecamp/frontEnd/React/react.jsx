@@ -1,39 +1,32 @@
-class MyForm extends React.Component {
+class MyApp extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			input: '',
-			submit: ''
-		};
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
-	handleChange(event) {
-		this.setState({
-			input: event.target.value
-		});
-	}
-	handleSubmit(event) {
-		event.preventDefault()
-		// Change code below this line
-		this.setState(state => ({
-			submit: state.input
-		}))
-		// Change code above this line
+			name: 'CamperBot'
+		}
 	}
 	render() {
 		return (
 			<div>
-				<form onSubmit={this.handleSubmit}>
-					{/* Change code below this line */}
-					<input onChange={this.handleChange} value={this.state.input} />
-					{/* Change code above this line */}
-					<button onClick={this.handleSubmit} type='submit'>Submit!</button>
-				</form>
 				{/* Change code below this line */}
-				<h1>{this.state.submit || ''}</h1>
+				<Navbar name={this.state.name} />
 				{/* Change code above this line */}
 			</div>
 		);
 	}
-}
+};
+
+class Navbar extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+	render() {
+		return (
+			<div>
+				{/* Change code below this line */}
+				<h1>Hello, my name is: {this.props.name} </h1>
+				{/* Change code above this line */}
+			</div>
+		);
+	}
+};
