@@ -1,63 +1,31 @@
 function scramble(str1, str2) {
-	//console.log(str1, str2);
-	let chars = str1
-		.trim()
-		.split('')
-	//console.log(chars);
-	let word = str2
-		.trim()
-		.split('')
-	//console.log(word);
-	let arr3 = [];
-	for (let i = 0; i < chars.length; i++) {
-		for (let j = 0; j < word.length; j++) {
-			if (chars[i] === word[j]) {
-				arr3.push(chars[i]);
-				word.splice(j, 1);
-				break;
-			}
+	const charCount = {};
+
+	for (let char of str1) {
+		charCount[char] = (charCount[char] || 0) + 1;
+	}
+
+	for (let char of str2) {
+		if (charCount[char] && charCount[char] > 0) {
+			charCount[char]--;
+		} else {
+			return false;
 		}
 	}
-	//console.log(arr3);
-	return arr3.length === str2.length ? true : false
+
+	return true;
 }
 
-let s1 = "abcdefghijklmnopqrstuvwxyz".repeat(10_000);
-let s2 = "zyxcba".repeat(9_000);
+//Данный код решает задачу проверки, можно ли из символов строки str1 составить строку str2. Вот поэтапное объяснение работы кода на русском языке:
 
-console.log(scramble(s1, s2));
-
-//'rkqodlw','world'
-//'cedewaraaossoqqyt', 'codewars'
-//'katas','steak'
-//'scriptjavx','javascript'
-//'scriptingjava','javascript'
-//'scriptsjava','javascripts'
-//'javscripts','javascript'
-//'jscripts', 'javascript'
-//'aabbcamaomsccdd','commas'
-//'commas','commas'
-//'sammoc','commas'
-
-//function scramble(str1, str2) {
-//	debugger
-//	const charCount = {};
-
-//	for (let char of str1) {
-//		charCount[char] = (charCount[char] || 0) + 1;
-//	}
-
-//	for (let char of str2) {
-//		if (charCount[char] && charCount[char] > 0) {
-//			charCount[char]--;
-//		} else {
-//			return false;
-//		}
-//	}
-
-//	return true;
-//}
-
-
-
-//console.log(scramble('scriptjavx', 'javascript')); 
+//Создается пустой объект charCount, который будет хранить количество каждого символа в str1.
+//Происходит итерация по каждому символу в str1.
+//Если символ уже существует в charCount, увеличиваем его счетчик на 1.
+//Если символа еще нет в charCount, устанавливаем его счетчик в 1.
+//Таким образом, объект charCount будет содержать информацию о количестве каждого символа в str1.
+//Происходит итерация по каждому символу в str2.
+//Если символ существует в charCount и его счетчик больше 0, уменьшаем счетчик на 1.
+//Если символа нет в charCount или его счетчик равен 0, возвращаем false.
+//Если все символы из str2 присутствуют в str1 и их количество корректно, функция вернет true.
+//Если все проверки прошли успешно, возвращаем true.
+//Таким образом, функция scramble проверяет, можно ли из символов строки str1 составить строку str2. Если это возможно, функция возвращает true, в противном случае - false.
