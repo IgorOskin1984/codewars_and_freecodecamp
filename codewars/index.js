@@ -1,7 +1,9 @@
-function arrayPlusArray(arr1, arr2) {
-	const sum = (arr) => {
-		return arr.reduce((accumulator, currentValue) => accumulator + currentValue)
-	}
-	return sum(arr1) + sum(arr2);
+function pillars(numPill, dist, width) {
+	dist = (dist * 100) * (numPill - 1)
+	console.log(dist);
+	let totalWidth = width * numPill;
+	console.log(width);
+	return dist + totalWidth - (width * (numPill > 2 ? 2 : numPill))
 }
-console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]));
+
+console.log(pillars(1, 10, 10));
