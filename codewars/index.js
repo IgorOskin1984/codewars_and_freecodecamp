@@ -1,9 +1,15 @@
-function pillars(numPill, dist, width) {
-	dist = (dist * 100) * (numPill - 1)
-	console.log(dist);
-	let totalWidth = width * numPill;
-	console.log(width);
-	return dist + totalWidth - (width * (numPill > 2 ? 2 : numPill))
+function find(array, element) {
+	return array.includes(element)
+		? array.indexOf(element)
+		: "Not found"
 }
 
-console.log(pillars(1, 10, 10));
+console.log(find([2, 3, 5, 7, 11], 5));
+
+
+//function find(array, element) {
+//  for (let i = 0; i < array.length; i++) {
+//    if (array[i] === element) return i;
+//  }
+//  return "Not found";
+//}
