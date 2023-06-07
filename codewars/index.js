@@ -1,31 +1,7 @@
-function scramble(str1, str2) {
-	const charCount = {};
-
-	for (let char of str1) {
-		charCount[char] = (charCount[char] || 0) + 1;
+function arrayPlusArray(arr1, arr2) {
+	const sum = (arr) => {
+		return arr.reduce((accumulator, currentValue) => accumulator + currentValue)
 	}
-
-	for (let char of str2) {
-		if (charCount[char] && charCount[char] > 0) {
-			charCount[char]--;
-		} else {
-			return false;
-		}
-	}
-
-	return true;
+	return sum(arr1) + sum(arr2);
 }
-
-//Данный код решает задачу проверки, можно ли из символов строки str1 составить строку str2. Вот поэтапное объяснение работы кода на русском языке:
-
-//Создается пустой объект charCount, который будет хранить количество каждого символа в str1.
-//Происходит итерация по каждому символу в str1.
-//Если символ уже существует в charCount, увеличиваем его счетчик на 1.
-//Если символа еще нет в charCount, устанавливаем его счетчик в 1.
-//Таким образом, объект charCount будет содержать информацию о количестве каждого символа в str1.
-//Происходит итерация по каждому символу в str2.
-//Если символ существует в charCount и его счетчик больше 0, уменьшаем счетчик на 1.
-//Если символа нет в charCount или его счетчик равен 0, возвращаем false.
-//Если все символы из str2 присутствуют в str1 и их количество корректно, функция вернет true.
-//Если все проверки прошли успешно, возвращаем true.
-//Таким образом, функция scramble проверяет, можно ли из символов строки str1 составить строку str2. Если это возможно, функция возвращает true, в противном случае - false.
+console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]));
