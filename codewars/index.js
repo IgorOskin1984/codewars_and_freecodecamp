@@ -1,9 +1,13 @@
-function firstNonConsecutive(arr) {
-	if (!arr.length) return null
-	for (let i = 1; i < arr.length; i++) {
-		if (arr[i] - arr[i - 1] !== 1) return arr[i]
+function rgb(r, g, b) {
+	const res = (num) => {
+		if (num <= 0) return '00'
+		if (num > 255) return "FF"
+		const hex = num.toString(16).toUpperCase()
+		return (num < 15)
+			? `0${hex}`
+			: hex
 	}
-	return null;
+	return res(r) + res(g) + res(b)
 }
 
-console.log(firstNonConsecutive([-7, -6, -4, -3, -2, 0, 1, 2]));
+console.log(rgb(159, 226, 6));
